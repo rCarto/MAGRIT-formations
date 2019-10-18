@@ -3,4 +3,4 @@
 Deux supports (cours + exercices) sont disponibles, calibrés pour 1 ou 2 jours de formation.
 Ils sont destinés à un public n'ayant pas d'expérience particulière en cartographie thématique. 
 
-![](Supports_2_jours/img/img.png)   
+![](Formation_2_jours/img/img.png)   
