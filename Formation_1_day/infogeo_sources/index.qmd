@@ -1,0 +1,308 @@
+---
+title: "<br><br>Les sources de l'information géographique"
+author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+date: last-modified
+date-format: "[Dernière modification :] MMMM, YYYY"
+format:
+  revealjs:
+    logo: "../img-template/riate.svg"
+    embed-resources: true
+    incremental: false
+    smaller: true
+    theme: [simple, ../theme.scss]
+title-slide-attributes:
+    data-background-image: "../img-template/magrit_banner.png"
+    data-background-size: contain
+    data-background-position: top
+    data-background-opacity: "number"
+    data-background-color: "#0b0b0d"
+editor: visual
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## Les composantes de l'IG
+
+<center>
+
+<br>
+
+```{r, echo = FALSE, out.width = "80%"}
+
+library(DiagrammeR)
+
+grViz("digraph dot {
+
+  # a 'graph' statement
+  graph [overlap = true]
+
+  # several 'node' statements
+  node [shape = rectangle, fontname = Helvetica, color='red', fontsize=9]
+  d1
+
+  node [shape = ellipse, fontname = Helvetica, color=black, fontsize = 6] // sets as circles
+  d2; d3
+  
+  d1 [label = 'Données géographiques'];
+  d2 [label = 'Géométries'];
+  d3 [label = 'Données'];
+
+  # several 'edge' statements
+  d1->d2[arrowhead = none]
+  d1->d3[arrowhead = none]
+
+}")
+```
+
+</center>
+
+# Géométries {.inverse background-color="black"}
+
+## Géométries
+
+Elles définissent la **forme** et la **localisation** de l'objet à cartographier sur la surface terrestre.
+
+La position des géométries sont toujours exprimées dans un système de coordonnées explicite : **latitude/longitude** ou en **coordonnées géographiques**.
+
+![](img/notre_dame.png)
+
+## Vecteurs et rasters
+
+2 types de données sont à différencier : le raster et le vecteur. <br><br>
+
+::: columns
+::: {.column width="49%"}
+### Raster
+
+C'est une **image** (plan scanné, photographie aérienne, image satellitaire...) **localisée dans l'espace**.
+
+L'information géographique est alors stockée dans des cellules (pixel) contiguës généralement carrées.
+
+Chaque pixel **défini par une résolution** possède des valeurs qui peuvent être traitées et cartographiées.
+
+Leur manipulation et analyse relève de champs méthodologiques particuliers (télédétection). Les logiciels de cartographie thématique ne sont pas adaptés à leur manipulation (\> SIG).
+:::
+
+::: {.column width="51%"}
+![](img/raster.png)
+:::
+:::
+
+## Vecteurs et rasters
+
+2 types de données sont à différencier : le raster et le vecteur. <br><br>
+
+::: columns
+::: {.column width="49%"}
+### Vecteur
+
+Il s'agit d'objets géométriques de type **points**, **lignes** ou **polygones**.
+
+Ces objets vectoriels ne **pixellisent pas**. On parlera néanmoins de niveaux de généralisation pour qualifier leur niveau de précision (parfois aussi appelée résolution).
+
+Chaque objet est défini par **un identifiant unique**.
+:::
+
+::: {.column width="49%"}
+![](img/vecteur.png)
+:::
+:::
+
+## Vecteurs et rasters
+
+2 types de données sont à différencier : le raster et le vecteur. <br><br>
+
+<center>![](img/raster_vecteur.png)</center>
+
+## Formats de fichiers vectoriels
+
+Les formats de stockage des géométries les plus connus sont :
+
+::: columns
+::: {.column width="49%"}
+-   **Shapefile (.shp)** : ou « fichier de couches » est le format de fichier **historique** des SIG. Initialement développé par ESRI pour ses logiciels commerciaux, il est devenu un standard *de facto*, malgré ses limitations (taille de fichiers, longueur texte, nombre maximal d'attributs)...
+
+-   **Geographic JSON (.geojson)** : Un format ouvert d'encodage de données géospatiales utilisant la norme JSON (JavaScript Object Notation), assez répandu sur le Web (cartographie interactive, D3.js),
+:::
+
+::: {.column width="49%"}
+-   **GeoPackage (.gpkg)** : Un format de données géospatiales raster ou vecteur, ouvert, non lié à un système d'exploitation. Conçu pour être aussi léger que possible, il permet notamment de stocker plusieurs couches géographiques dans un seul et même fichier.
+
+-   **Keyhole Markup Language (.kml)** : ou « langage à base de balises géolocales », est fondé sur le formalisme XML. Depuis 2008, le format est normalisé par l'Open Geospatial Consortium. Il s'agit, avec le .gpx, du format classique de données produites par GPS.
+:::
+:::
+
+## Niveaux de généralisation
+
+Le niveau de détail relatif aux géometries vectorielles (nombre de points).
+
+Les fournisseurs de données géographiques fournissent régulièrement plusieurs niveaux de généralisation, comme **Eurostat (GISCO)**.
+
+::: panel-tabset
+### 1:1 Million
+
+```{r, echo = FALSE}
+library(giscoR)
+par(mar=c(0,0,0,0))
+nuts2 <- gisco_get_nuts(nuts_level = 2, country = "France", resolution = "1")
+bzh <- nuts2[nuts2$NUTS_ID == "FRH0",]
+plot(bzh$geometry, col = NA, border = NA)
+plot(nuts2, col = "peachpuff", border = "white", add = TRUE)
+```
+
+### 1:3 Million
+
+```{r, echo = FALSE}
+par(mar=c(0,0,0,0))
+nuts2 <- gisco_get_nuts(nuts_level = 2, country = "France", resolution = "3")
+plot(bzh$geometry, col = NA, border = NA)
+plot(nuts2, col = "peachpuff", border = "white", add = TRUE)
+```
+
+### 1:10 Million
+
+```{r, echo = FALSE}
+par(mar=c(0,0,0,0))
+nuts2 <- gisco_get_nuts(nuts_level = 2, country = "France", resolution = "10")
+plot(bzh$geometry, col = NA, border = NA)
+plot(nuts2, col = "peachpuff", border = "white", add = TRUE)
+```
+
+### 1:20 Million
+
+```{r, echo = FALSE}
+par(mar=c(0,0,0,0))
+nuts2 <- gisco_get_nuts(nuts_level = 2, country = "France", resolution = "20")
+plot(bzh$geometry, col = NA, border = NA)
+plot(nuts2, col = "peachpuff", border = "white", add = TRUE)
+```
+
+### 1:60 Million
+
+```{r, echo = FALSE}
+par(mar=c(0,0,0,0))
+nuts2 <- gisco_get_nuts(nuts_level = 2, country = "France", resolution = "60")
+plot(bzh$geometry, col = NA, border = NA)
+plot(nuts2, col = "peachpuff", border = "white", add = TRUE)
+```
+:::
+
+## Niveaux de généralisation
+
+Le choix du niveau de généralisation adapté dépend des **objectifs de la carte**, de l'emprise de **espace d'étude**, et des **caractéristiques des polygones du fond de carte**.
+
+```{r, echo = FALSE}
+library(mapsf)
+library(sf)
+par(mar=c(0,0,0,0))
+nuts2 <- gisco_get_nuts(nuts_level = 3, resolution = "1", epsg = "3035")
+nuts0 <- gisco_get_nuts(nuts_level = 0, resolution = "1", epsg = "3035")
+xmin <- 2380000
+xmax <- 6550000
+ymin <- 1350000
+ymax <- 5420000
+
+lon <- c(xmin,xmax,xmax,xmin,xmin)
+lat <- c(ymin,ymin,ymax,ymax,ymin)
+frame <- st_sfc(st_polygon(list(cbind(lon, lat))))
+frame <- st_as_sf(frame)
+st_crs(frame) <- 3035
+
+map_theme <- mf_theme("default", bg = NA, fg = NA, mar = c(0, 0, 0, 0), tab = TRUE,
+                      pos = "left",  inner = TRUE, line = 3, cex = .8, font = 2)
+mf_theme(map_theme)
+mf_init(frame)
+mf_map(nuts2, var = "URBN_TYPE", type = "typo", pal = c("red", "yellow", "lightgreen"), 
+  val_order = c("1", "2", "3"), border = "white", lwd = .7, add = TRUE, leg_pos = "n")
+mf_legend(type = "typo", pos = "left", title = "Typologie Urbain-Rural",
+          val = c("Région à prédominance urbaine", "Region intermédiaire", 
+                  "Région à prédominance rurale"),
+          pal = c("red", "yellow", "lightgreen"))
+mf_map(nuts0, col = NA, border = "black", add = TRUE)
+mf_title("Niveau de généralisation : 1:1 Million", inner = TRUE)
+mf_credits(txt = "Source : GISCO, Eurostat, 2023")
+```
+
+## Niveaux de généralisation
+
+Le choix du niveau de généralisation adapté dépend des **objectifs de la carte**, de l'emprise de **espace d'étude**, et des **caractéristiques des polygones du fond de carte**.
+
+```{r, echo = FALSE}
+library(mapsf)
+library(sf)
+par(mar=c(0,0,0,0))
+nuts2 <- gisco_get_nuts(nuts_level = 3, resolution = "60", epsg = "3035")
+nuts0 <- gisco_get_nuts(nuts_level = 0, resolution = "60", epsg = "3035")
+
+mf_theme(map_theme)
+mf_init(frame)
+mf_map(nuts2, var = "URBN_TYPE", type = "typo", pal = c("red", "yellow", "lightgreen"), 
+  val_order = c("1", "2", "3"), border = "white", lwd = .7, add = TRUE, leg_pos = "n")
+mf_legend(type = "typo", pos = "left", title = "Typologie Urbain-Rural",
+          val = c("Région à prédominance urbaine", "Region intermédiaire", 
+                  "Région à prédominance rurale"),
+          pal = c("red", "yellow", "lightgreen"))
+mf_map(nuts0, col = NA, border = "black", add = TRUE)
+mf_title("Niveau de généralisation : 1:60 Million", inner = TRUE)
+mf_credits(txt = "Source : GISCO, Eurostat, 2023")
+```
+
+## Simplifier les géométries
+
+Des outils existent pour simplifier le niveau de détail des géométries, comme [Mapshapper](https://mapshaper.org/)
+
+::: columns
+::: {.column width="49%"}
+![](img/mapshapper.png)
+:::
+
+::: {.column width="49%"}
+![](img/mapshapper2.png)
+:::
+:::
+
+
+## Obtenir des géométries
+
+Les fournisseurs de fonds de carte géoréférencés sont nombreux...
+
+::: columns
+
+::: {.column width="49%"}
+
+**En France, un incontournable : l'IGN**
+
+-   <a href="https://geoservices.ign.fr/telechargement" target="_blank">Géoservices de l'IGN (Institut National de l'information géographique et forestière) </a>
+-   <a href="https://www.geoportail.gouv.fr/" target="_blank">Géoportail (portail national d'accès à l'information géographique de référence)</a>
+
+**Les organismes "spécialisés"**
+
+-   <a href="http://infoterre.brgm.fr" target="_blank">Bureau de Recherches Géologiques et Minières (BRGM)</a>
+-   <a href="https://data.ademe.fr/" target="_blank">Agence de l'Environnement et de la Maîtrise de l'Energie (ADEME)</a>
+-   <a href="https://www.onf.fr/onf/connaitre-lonf/+/35::open-data-pour-mieux-partager-les-donnees-forestieres.html" target="_blank">Office national des forêts</a>
+-   ...
+
+:::
+
+::: {.column width="49%"}
+
+**Les collectivités terrritoriales**
+
+-   Portail Open Data des régions : [Ile-de-France](https://data.iledefrance.fr/pages/home/%22){.external target="_blank"}, [Hauts-de-France](https://opendata.hautsdefrance.fr/){.external target="_blank"}, [Bretagne](https://data.bretagne.bzh/pages/home-page/){.external target="_blank"} etc.
+
+-   Portail Open Data des métropoles : <a href="https://metropole-grand-paris.opendata.arcgis.com/" target="_blank">Métropole du Grand Paris</a>, <a href="https://opendata.lillemetropole.fr/page/home/" target="_blank">Métropole Européenne de Lille</a>, <a href="https://data.rennesmetropole.fr/explore/?sort=modified" target="_blank">Rennes Métropole</a>, etc.
+
+**Au niveau international**
+
+-   <a href="https://ec.europa.eu/eurostat/web/gisco/geodata/reference-data" target="_blank">Eurostat - GISCO</a>
+-   <a href="https://land.copernicus.eu/" target="_blank">Copernicus</a>
+-   <a href="https://www.naturalearthdata.com/" target="_blank">Natural Earth</a>
+-   <a href="https://www.worldpop.org/" target="_blank">World Pop</a>
+-   <a href="https://gadm.org/" target="_blank">Global Administrative Boundaries (GADM)</a>
+-   <a href="https://www.openstreetmap.fr/" target="_blank">OpenSreetMap (OSM)</a>, données exportables via des API comme <a href="http://overpass-turbo.eu/" target="_blank">Overpass-turbo</a>
+
+:::
+
+:::

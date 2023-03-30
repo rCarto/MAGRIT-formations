@@ -2,7 +2,7 @@
 $presentation-font-size-root: 45px;
 $presentation-h1-font-size: 3em;
 $modal-footer-bg: red;
-$presentation-h2-font-size: 2em;
+$presentation-h2-font-size: 1.8em;
 $presentation-h3-font-size: 1.2em;
 $link-color: red !default;
 $body-color: #0b0b0d !default;
@@ -14,7 +14,7 @@ $body-color: #0b0b0d !default;
  }
 
 .title {
-  font-size: 3.5em !important;
+  font-size: 3em !important;
   text-align: left;
   color: white !important;
 }
@@ -37,6 +37,9 @@ $body-color: #0b0b0d !default;
   font-size: 0.5em;
 }
 
+.reveal .slide-logo {
+  width: 60px!important;
+}
 
 /*-- scss:rules --*/
 
