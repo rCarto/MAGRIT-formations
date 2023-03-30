@@ -1,0 +1,83 @@
+/*-- scss:defaults --*/
+$presentation-font-size-root: 45px;
+$presentation-h1-font-size: 3em;
+$modal-footer-bg: red;
+$presentation-h2-font-size: 2em;
+$presentation-h3-font-size: 1.2em;
+$link-color: red !default;
+$body-color: #0b0b0d !default;
+
+
+.inverse h1 {
+   color: white;
+   background-color: black;
+ }
+
+.title {
+  font-size: 3.5em !important;
+  text-align: left;
+  color: white !important;
+}
+
+.author {
+  font-size: 0.8em;
+  text-align: left;
+}
+
+.date {
+  font-size: 0.7em;
+  text-align: left;
+}
+
+.medium {
+  font-size: 0.8em;
+}
+
+.small {
+  font-size: 0.5em;
+}
+
+
+/*-- scss:rules --*/
+
+.sourceCode {
+  font-size:0.9em;
+}
+
+.reveal .footer {
+background-color: white;
+padding:0px;
+opacity: 1;
+}
+
+.reveal .header {
+text-align: center;
+background-color: white;
+color: black;
+padding:0px;
+opacity: 1;
+}
+
+/* scroll news */
+.scroll-100 {
+  max-height: 400px;
+  overflow-y: auto;
+  background-color: inherit;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: red;
+  border-radius: 5px;
+}
