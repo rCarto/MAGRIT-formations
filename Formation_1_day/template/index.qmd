@@ -1,0 +1,71 @@
+---
+title: "<br><br>Presentation title displayed in 2 lines"
+author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+date: last-modified
+date-format: "[Dernière modification :] MMMM, YYYY"
+title-slide-attributes:
+  data-background-size: cover
+  data-background-opacity: "0.5"
+format:
+  revealjs:
+    logo: "../img-template/riate.svg"
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, ../theme.scss]
+title-slide-attributes:
+    data-background-image: "../img-template/magrit_banner.png"
+    data-background-size: contain
+    data-background-position: top
+    data-background-opacity: "number"
+    data-background-color: "#0b0b0d"
+editor: visual
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# A h1 title {.inverse background-color="black"}
+
+## A h2 title
+
+**Lorem Ipsum** is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum
+
+::: columns
+::: {.column width="48%"}
+::: medium
+**medim Paragraph size** Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ip.
+:::
+:::
+
+::: {.column width="48%"}
+::: small
+**small Paragraph size** Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ip.
+:::
+:::
+:::
+
+## A h2 title
+
+### A h3 title
+
+![](../img-template/github.png)
+
+<center>A beautiful logo !</center>
+
+## Some tabset
+
+::: panel-tabset
+### Tab1
+
+Mais
+
+### Tab2
+
+c'est
+
+### Tab3
+
+magiiiiique !
+:::
