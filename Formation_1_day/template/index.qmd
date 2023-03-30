@@ -3,9 +3,6 @@ title: "<br><br>Presentation title displayed in 2 lines"
 author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
 date: last-modified
 date-format: "[Dernière modification :] MMMM, YYYY"
-title-slide-attributes:
-  data-background-size: cover
-  data-background-opacity: "0.5"
 format:
   revealjs:
     logo: "../img-template/riate.svg"
