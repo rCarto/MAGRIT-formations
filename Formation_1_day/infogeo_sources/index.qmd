@@ -124,15 +124,43 @@ Les formats de stockage des géométries les plus connus sont :
 ::: {.column width="49%"}
 -   **Shapefile (.shp)** : ou « fichier de couches » est le format de fichier **historique** des SIG. Initialement développé par ESRI pour ses logiciels commerciaux, il est devenu un standard *de facto*, malgré ses limitations (taille de fichiers, longueur texte, nombre maximal d'attributs)...
 
--   **Geographic JSON (.geojson)** : Un format ouvert d'encodage de données géospatiales utilisant la norme JSON (JavaScript Object Notation), assez répandu sur le Web (cartographie interactive, D3.js),
+-   **Geographic JSON (.geojson)** : Un format ouvert d'encodage de données géospatiales utilisant la norme JSON (JavaScript Object Notation), assez répandu sur le Web (cartographie interactive, D3.js).
 :::
 
 ::: {.column width="49%"}
 -   **GeoPackage (.gpkg)** : Un format de données géospatiales raster ou vecteur, ouvert, non lié à un système d'exploitation. Conçu pour être aussi léger que possible, il permet notamment de stocker plusieurs couches géographiques dans un seul et même fichier.
 
 -   **Keyhole Markup Language (.kml)** : ou « langage à base de balises géolocales », est fondé sur le formalisme XML. Depuis 2008, le format est normalisé par l'Open Geospatial Consortium. Il s'agit, avec le .gpx, du format classique de données produites par GPS.
+
+-   **Fichiers tabulaires (.csv, .xls, etc.)** : tout simplement ! A partir du moment où ils contiennent une dimension géographique (localisation X/Y relative à un point en général).
 :::
 :::
+
+## Le shapefile
+
+Son extension est classiquement **.shp**, mais il est toujours accompagné de deux autres fichiers de même nom :
+
+::: columns
+::: {.column width="49%"}
+-   **.dbf** : contient les données attributaires.
+-   **.shx** : stocke l'index de la géométrie.
+
+D'autres fichiers peuvent optionnellement être également fournis :
+
+-   **.sbn et .sbx**: index spatial des formes.
+-   **.prj** : information sur le système de coordonnées.
+-   **.shp.xml** : métadonnées du shapefile.
+-   **.cpg** : gestion de l'encodage.
+-   et potentiellement d'autres : .sbn, .sbx, .fbn,.fbx, .atx...
+
+:::
+
+::: {.column width="49%"}
+<img src="img/shp.png" width="400"/>
+:::
+:::
+
+> Il faut toujours conserver l'intégrité de l'ensemble de ces fichiers et ne jamais éditer un fichier en dehors de logiciels dédiés.
 
 ## Niveaux de généralisation
 
@@ -187,6 +215,47 @@ nuts2 <- gisco_get_nuts(nuts_level = 2, country = "France", resolution = "60")
 plot(bzh$geometry, col = NA, border = NA)
 plot(nuts2, col = "peachpuff", border = "white", add = TRUE)
 ```
+:::
+
+
+## Niveaux de généralisation
+
+Le niveau de détail relatif aux géometries vectorielles (nombre de points).
+
+Les fournisseurs de données géographiques fournissent régulièrement plusieurs niveaux de généralisation, comme **Eurostat (GISCO)** ou **Natural Earth**.
+
+::: panel-tabset
+### 10 (large)
+
+```{r, echo = FALSE, warning=FALSE, message = FALSE}
+library(rnaturalearth)
+library(sf)
+par(mar=c(0,0,0,0))
+country <- ne_download(scale = "large", returnclass = "sf")
+fra <- country[country$ADM0_A3 == "FRA",]
+fra <- st_cast(fra, "POLYGON")
+plot(fra[c(2,12),"geometry"], col = NA, border = NA)
+plot(country, col = "peachpuff", border = "white", add = TRUE)
+```
+
+### 50 (medium)
+
+```{r, echo = FALSE}
+par(mar=c(0,0,0,0))
+country <- ne_download(scale = "medium", returnclass = "sf")
+plot(fra[c(2,12),"geometry"], col = NA, border = NA)
+plot(country, col = "peachpuff", border = "white", add = TRUE)
+```
+
+### 110 (small)
+
+```{r, echo = FALSE}
+par(mar=c(0,0,0,0))
+country <- ne_download(scale = "small", returnclass = "sf")
+plot(fra[c(2,12),"geometry"], col = NA, border = NA)
+plot(country, col = "peachpuff", border = "white", add = TRUE)
+```
+
 :::
 
 ## Niveaux de généralisation
@@ -263,15 +332,12 @@ Des outils existent pour simplifier le niveau de détail des géométries, comme
 :::
 :::
 
-
-## Obtenir des géométries
+## Rechercher de l'information géographique
 
 Les fournisseurs de fonds de carte géoréférencés sont nombreux...
 
 ::: columns
-
 ::: {.column width="49%"}
-
 **En France, un incontournable : l'IGN**
 
 -   <a href="https://geoservices.ign.fr/telechargement" target="_blank">Géoservices de l'IGN (Institut National de l'information géographique et forestière) </a>
@@ -283,11 +349,9 @@ Les fournisseurs de fonds de carte géoréférencés sont nombreux...
 -   <a href="https://data.ademe.fr/" target="_blank">Agence de l'Environnement et de la Maîtrise de l'Energie (ADEME)</a>
 -   <a href="https://www.onf.fr/onf/connaitre-lonf/+/35::open-data-pour-mieux-partager-les-donnees-forestieres.html" target="_blank">Office national des forêts</a>
 -   ...
-
 :::
 
 ::: {.column width="49%"}
-
 **Les collectivités terrritoriales**
 
 -   Portail Open Data des régions : [Ile-de-France](https://data.iledefrance.fr/pages/home/%22){.external target="_blank"}, [Hauts-de-France](https://opendata.hautsdefrance.fr/){.external target="_blank"}, [Bretagne](https://data.bretagne.bzh/pages/home-page/){.external target="_blank"} etc.
@@ -302,7 +366,216 @@ Les fournisseurs de fonds de carte géoréférencés sont nombreux...
 -   <a href="https://www.worldpop.org/" target="_blank">World Pop</a>
 -   <a href="https://gadm.org/" target="_blank">Global Administrative Boundaries (GADM)</a>
 -   <a href="https://www.openstreetmap.fr/" target="_blank">OpenSreetMap (OSM)</a>, données exportables via des API comme <a href="http://overpass-turbo.eu/" target="_blank">Overpass-turbo</a>
+:::
+:::
+
+# Enrichir les géométries par des données statistiques {.inverse background-color="black"}
+
+## Données attributaires ? 
+
+L'ensemble des informations relatives à un objet géographique, qui le décrivent et le caractérisent.
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+knitr::include_graphics('img/attribut.png')
+```
+
+
+## Pourquoi faire ?
+
+Les géométries contiennent souvent quelques attributs statistiques, **assez limités** pour initier des analyses ou produire des représentations cartographiques.
+
+::: columns
+::: {.column width="49%"}
+::: medium
+Attributs associés aux géométries des communes françaises (IGN)
+:::
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+com <- read.csv("data/insee_extract.csv")
+head(com, 5)
+```
+:::
+
+::: {.column width="49%"}
+::: medium
+<center>
+Attributs associés aux géométries des régions européennes (GISCO)
+</center>
+:::
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+library(giscoR)
+nuts2 <- gisco_get_nuts(nuts_level = 2, country = "FR", resolution = "60", epsg = "3035")
+nuts2 <- st_set_geometry(nuts2, NULL)
+head(nuts2)
+```
+:::
+:::
+
+## Pourquoi faire ?
+
+Les géométries contiennent souvent quelques attributs statistiques, **assez limités** pour initier des analyses ou produire des représentations cartographiques.
+
+::: columns
+::: {.column width="49%"}
+::: medium
+Attributs associés aux géométries pays du monde (Natural Earth)
+:::
+
+```{r, echo = FALSE, out.width = "800px", fig.align='center'}
+library(rnaturalearth)
+country <- ne_download(scale = 110, type = "countries", returnclass = "sf")
+country <- st_set_geometry(country, NULL)
+country <- as.data.frame(country)
+head(country)
+```
+:::
+
+::: {.column width="49%"}
+:::
+:::
+
+## Dimension géographique de tableaux de données statistiques
+
+::: columns
+::: {.column width="49%"}
+
+On parle ici de tableaux de données définis par :
+
+- Une emprise géographique (France, Europe, Monde, etc.)
+- Une brique géographique élémentaire (une commune, une rivière, une région, une forêt, etc.)
+- Des données attributaires utiles à l'analyse.
+- Un identifiant unique pour chaque brique géographique élémentaire. 
+- Une correspondance au moins partielle avec le fond de carte dont on dispose. 
 
 :::
+
+::: {.column width="49%"}
+![](img/Excel_tab.png)
+:::
+
+> On peut alors enrichir sémantiquement les géométries ! 
+
+:::
+
+## Comment faire ?
+
+Dans les cas relevant de la donnée institutionnelle c'est plutôt facile ! Les codes géographiques (uniques) des unités territoriales qui composent les fonds de carte sont normés et une association étroite entre fond de carte.
+
+::: columns
+::: {.column width="49%"}
+On peut citer par exemple :
+
+-   A l'**échelle mondiale** : Natural Earth (géométries) / Nations Unies (Population prospect) : pays définis par des codes ISO uniques.
+-   A l'**échelle européenne** : GISCO (géométries) / Eurostat (données socio-économiques). Régions européennes définies par la nomenclature **NUTS**.
+-   A l'**échelle française** : IGN (géométries) / INSEE. Plusieurs découpages disponibles (communes, EPCI, etc.)
+
+Il faut juste veiller à la **compatibilité de version des données et géométries**
+:::
+
+::: {.column width="49%"}
+Données de population communales de l'INSEE
+![](img/insee.png)
+:::
+:::
+
+
+
+## Comment faire ?
+
+Dans les cas relevant de la donnée institutionnelle c'est plutôt facile ! Les codes géographiques (uniques) des unités territoriales qui composent les fonds de carte sont normés et une association étroite entre fond de carte.
+
+::: columns
+::: {.column width="49%"}
+On peut citer par exemple :
+
+-   A l'**échelle mondiale** : Natural Earth (géométries) / Nations Unies (Population prospect) : pays définis par des codes ISO uniques.
+-   A l'**échelle européenne** : GISCO (géométries) / Eurostat (données socio-économiques). Régions européennes définies par la nomenclature **NUTS**.
+-   A l'**échelle française** : IGN (géométries) / INSEE. Plusieurs découpages disponibles (communes, EPCI, etc.)
+
+Il faut juste veiller à la **compatibilité de version des données et géométries**
+:::
+
+::: {.column width="49%"}
+Données de population communales de l'INSEE
+![](img/ign.png)
+:::
+:::
+
+## Comment faire ?  
+
+Pour les fonds de carte "moins conventionnels", utiliser les fonctionnalités des SIG ou des logiciels de cartographie thématique pour exporter les codes associés et gérer la bonne concordance entre les données que vous collectez et les fonds de carte de référence. 
+
+
+![](img/export_csv.png)
+
+
+
+## Comment faire ? 
+
+::: columns
+
+::: {.column width="49%"}
+
+L'enrichissement de données attributaires au format tabulaire (.csv, .xls, .ods, etc.) est réalisé par une **jointure attributaire**. 
+
+Elle d'**associer deux tables attributaires décrivant des entités communes**. L'opération produit une seule table juxtaposant les champs de la table à joindre à ceux de la table d'origine.
+
+Avec les logiciels de cartographie / SIG, la table d'origine est souvent associée aux géométries.
+
+Les jointures attributaires sont utilisées pour introduire des informations nouvelles dans une couche géographique.
+
+:::
+
+::: {.column width="49%"}
+
+![](img/jointure_attributaire.png)
+
+Source : Université Virtuelle Environnement et Développement durable, glossaire des SIG
+
+
+:::
+:::
+
+## Comment faire ? 
+
+La jointure attributaire est une fonctionnalité de base des logiciels de cartographie thématique ou de SIG.
+
+::: columns
+
+::: {.column width="49%"}
+
+![](img/join_1.png)
+
+:::
+
+::: {.column width="49%"}
+
+![](img/join_2.png)
+
+:::
+
+:::
+
+
+## Pour conclure... {.inverse background-color="black" .v-center-container}
+
+<br><br><br>
+
+::: {style='display: flex; justify-content: center; align-items: center;'}
+
+**Questions centrales à se poser lorsque l'on recherche de l'information géographique**
+
+-   **Quel est mon espace d'étude ?** *Monde ? Europe ? France ? Ile-de-France ? ...*<br>
+
+-   **Quel est l'objet géographique sur lequel je travaille ?** *Pays ? Régions ? Communes ? Parcs naturels ? Rivières ? ...* <br>
+
+-   **Quelle est la thématique que je souhaite explorer ?** *Environnement ? Démographie ? Transport? ...* <br>
+
+-   **Quel est le format de données que je recherche ?** *Géométries ? Données statistiques à joindre à mes couches géographiques ?* <br>
+
+-   **Données institutionnelles ? Quelle période ?**
+
+</br>
 
 :::
