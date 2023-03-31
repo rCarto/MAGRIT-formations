@@ -1,0 +1,68 @@
+---
+title: "<br><br>Quel outil pour quel usage ?"
+author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+date: last-modified
+date-format: "[Dernière modification :] MMMM, YYYY"
+format:
+  revealjs:
+    logo: "../img-template/riate.svg"
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, ../theme.scss]
+title-slide-attributes:
+    data-background-image: "../img-template/magrit_banner.png"
+    data-background-size: contain
+    data-background-position: top
+    data-background-opacity: "number"
+    data-background-color: "#0b0b0d"
+editor: visual
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+Lignes
+**Spécificités / fonctionnalités**
+
+- Environnement clic-bouton
+- Science reproductible 
+- Cartographie thématique (diversité symbologie)
+- Cartographie interactive
+- Représentations de raster
+- Manipulations de données spatiales / géotraitements
+- Statistique spatiale
+
+
+Colonnes (**famille de logiciels / librairies** > chopper les logos)
+
+- Logiciels cartographie thématique (logo Magrit, Karthis, Philcarto)
+- Librairies / packages issus de logiciels de programmation (R, Python, js) > nom des librairies centrales de chaque environnement
+- SIG (QGIS, ArcGIS)
+- Librairies de Web Mapping 
+
+
+## Librairies centrales R
+
+- Manipulation de données spatiales : sf
+- Cartographie thématique : mapsf, tmap, ggplot
+- Analyse d'images géographiques : raster, stars, terra
+- Analyse spatiale : rgeoda, rspat, potential
+- Cartographie intéractive : leaflet, mapview 
+
+## Libraries centrales Python
+
+- Manipulation de données spatiales : Arcpy, Geopandas, GDAL/OGR, PyProj
+- Cartographie thématique :  Pycairo, mapnik, matplot
+- Raster : RSGISLib,  osgeo/gdal
+- Analyse spatiale : NumPy, Pandas
+- Cartographie interactive : ipyleaflet, Folium
+
+## Libraries centrales Js
+
+- Manipulation de données spatiales : turf.js
+- Cartographie thématique: d3, bertin
+
+bertin
