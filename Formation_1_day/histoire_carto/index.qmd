@@ -1,0 +1,185 @@
+---
+title: "<br><br>Petite histoire de la cartographie"
+author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+date: last-modified
+date-format: "[Dernière modification :] MMMM, YYYY"
+format:
+  revealjs:
+    logo: "../img-template/riate.svg"
+    embed-resources: true
+    incremental: false
+    smaller: true
+    theme: [simple, ../theme.scss]
+title-slide-attributes:
+    data-background-image: "../img-template/magrit_banner.png"
+    data-background-size: contain
+    data-background-position: top
+    data-background-opacity: "number"
+    data-background-color: "#0b0b0d"
+editor: visual
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+
+## {.hide background-color="white" background-image="img/I.01.histoire.png" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/Bedolina.jpg" background-size="contain"}
+
+::: footer
+"Cadastre" de Bedolina (découverte en en Italie du nord) 2000 av.nè. Quatre périodes au moins de gravure se superposent, et cette mystérieuse topographie apparaît sur la deuxième couche, voisinant avec des représentations de cervidés. S'il s'agit bien d'un premier vocabulaire topographique, nous ne savons pas le lire.
+:::
+
+##  {.hide background-color="white" background-image="img/mattangs.jpg" background-size="contain"}
+
+::: footer
+Cartes polynésiennes appelées Rebbelibs, Medosou ou Mattangs (1000 av.nè)
+:::
+
+##  {.hide background-color="white" background-image="img/sargon.png" background-size="contain"}
+
+::: footer
+Carte babylonnienne du Monde découverte à Sippar,au sud de l'Irak. 600 av.nè
+:::
+
+##  {.hide background-color="white" background-image="img/eratosthene.gif" background-size="contain"}
+
+::: footer
+La Terre est une sphère de 40 000km de circonférence (Eratostène, 200 av.nè)
+:::
+
+##  {.hide background-color="white" background-image="img/ptolemee.png" background-size="contain"}
+
+::: footer
+La Géographie de Ptolémée (vers 200)
+:::
+
+##  {.hide background-color="white" background-image="img/TO.jpg" background-size="contain"}
+
+::: footer
+Au moyen-âge, les cartes T dans l'O
+:::
+
+##  {.hide background-color="white" background-image="img/idrisi.png" background-size="contain"}
+
+::: footer
+La géographie arabe (Al Idrisi, 1154)
+:::
+
+##  {.hide background-color="white" background-image="img/pisane.JPEG" background-size="contain"}
+
+::: footer
+Les portulans - carte pisane (fin XIIIe siècle)
+:::
+
+
+##  {.hide background-color="white" background-image="img/kangnido.png" background-size="contain"}
+
+::: footer
+la carte Kangnido (Corée, 1402)
+:::
+
+##  {.hide background-color="white" background-image="img/waldesmuller.jpg" background-size="contain"}
+
+::: footer
+les grandes découvertes (Waldseemüller, en 1507)
+:::
+
+##  {.hide background-color="white" background-image="img/Mercator1784.jpg" background-size="contain"}
+
+::: footer
+La fameuse projection de Mercator, 1512-1594 (carte de 1784)
+:::
+
+
+##  {.hide background-color="white" background-image="img/osm.png" background-size="contain"}
+
+::: footer
+OpenStreetMap (Aujourd'hui)
+:::
+
+## {.hide background-color="white"}
+
+
+::: columns
+::: {.column width="49%"}
+<img src="img/oresme1.png" style="border:none"/></img>
+:::
+
+::: {.column width="49%"}
+<img src="img/oresme2.png" style="border:none"/></img>
+:::
+:::
+
+::: footer
+Nicole Oresme, (1370) est un des premiers à concevoir le principe et l'utilité des coordonnées cartésiennes pour la représentation graphique de phénomènes quantitatifs
+:::
+
+##  {.hide background-color="white" background-image="img/Playfair1.png" background-size="contain"}
+
+::: footer
+Commercial and Political Atlas. William Playfair (1786)
+:::
+
+##  {.hide background-color="white" background-image="img/Playfair2.png" background-size="contain"}
+
+::: footer
+Commercial and Political Atlas. William Playfair (1786)
+:::
+
+##  {.hide background-color="white" background-image="img/Playfair3.png" background-size="contain"}
+
+::: footer
+Commercial and Political Atlas. William Playfair (1786)
+:::
+
+##  {.hide background-color="white" background-image="img/Nightingale.png" background-size="contain"}
+
+::: footer
+Notes on Matters Affecting the Health, Efficiency and Hospital Administration of the British Army. Florence Nightingale (1857)
+:::
+
+##  {.hide background-color="white" background-image="img/Dupin.png" background-size="contain"}
+
+::: footer
+La première carte thématique de l'histoire (Charles Dupin, 1826)
+:::
+
+##  {.hide background-color="white" background-image="img/Montizon.png" background-size="contain"}
+
+::: footer
+La carte par points d'A. Frère de Montizon (1830)
+:::
+
+##  {.hide background-color="white" background-image="img/Cheysson.png" background-size="contain"}
+
+::: footer
+La mushroom map d'Emile Cheysson (1886)
+:::
+
+##  {.hide background-color="white" background-image="img/Minardbandes.jpg" background-size="contain"}
+
+::: footer
+Charles Joseph Minard (1862)
+:::
+
+##  {.hide background-color="white" background-image="img/Minard.png" background-size="contain"}
+
+::: footer
+Carte Figurative des pertes successives en hommes de l'armée française dans la campagne de Russie 1812--1813.<br/>Charles Joseph Minard (1869). Le <b>GOLD STANDARD</b> de la dataviz. Minard représente en 1869 les pertes colossales de l'armée française dans la campagne de Russie au début du XIXe siècle. Cette fameuse « carte figurative » raconte l'histoire de cette armée, qui arrive à Moscou avec moins d'un quart de son effectif de départ, avant de se faire à nouveau décimer sur le voyage du retour. 
+:::
+
+##  {.hide background-color="white" background-image="img/deckgl.png" background-size="contain"}
+
+::: footer
+deckgl, 2015
+:::
+
+
+##  {.hide background-color="white" background-image="img/Semio.jpg" background-size="contain"}
+
+::: footer
+Jacques Bertin, 1967
+:::
