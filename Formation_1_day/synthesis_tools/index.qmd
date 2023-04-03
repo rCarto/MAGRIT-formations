@@ -1,6 +1,6 @@
 ---
-title: "<br><br>Quel outil pour quel usage ?"
-author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+title: "<br><br>Quel outils pour quels usages ?"
+author: "Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
 date: last-modified
 date-format: "[Dernière modification :] MMMM, YYYY"
 format:
@@ -23,46 +23,26 @@ editor_options:
   chunk_output_type: console
 ---
 
+## Quels outils pour quels usages ?
 
-Lignes
-**Spécificités / fonctionnalités**
-
-- Environnement clic-bouton
-- Science reproductible 
-- Cartographie thématique (diversité symbologie)
-- Cartographie interactive
-- Représentations de raster
-- Manipulations de données spatiales / géotraitements
-- Statistique spatiale
+![](img/synthese_outils.svg)
 
 
-Colonnes (**famille de logiciels / librairies** > chopper les logos)
+## Spatial avec R
 
-- Logiciels cartographie thématique (logo Magrit, Karthis, Philcarto)
-- Librairies / packages issus de logiciels de programmation (R, Python, js) > nom des librairies centrales de chaque environnement
-- SIG (QGIS, ArcGIS)
-- Librairies de Web Mapping 
+![](img/R.svg)
 
+Et [beaucoup d'autres](https://cran.r-project.org/web/views/Spatial.html)... 
 
-## Librairies centrales R
+## Spatial avec Python
 
-- Manipulation de données spatiales : sf
-- Cartographie thématique : mapsf, tmap, ggplot
-- Analyse d'images géographiques : raster, stars, terra
-- Analyse spatiale : rgeoda, rspat, potential
-- Cartographie intéractive : leaflet, mapview 
+-   Manipulation de données spatiales : Arcpy, Geopandas, GDAL/OGR, PyProj
+-   Cartographie thématique : Pycairo, mapnik, matplot
+-   Raster : RSGISLib, osgeo/gdal
+-   Analyse spatiale : NumPy, Pandas
+-   Cartographie interactive : ipyleaflet, Folium
 
-## Libraries centrales Python
+## Spatial avec Js
 
-- Manipulation de données spatiales : Arcpy, Geopandas, GDAL/OGR, PyProj
-- Cartographie thématique :  Pycairo, mapnik, matplot
-- Raster : RSGISLib,  osgeo/gdal
-- Analyse spatiale : NumPy, Pandas
-- Cartographie interactive : ipyleaflet, Folium
-
-## Libraries centrales Js
-
-- Manipulation de données spatiales : turf.js
-- Cartographie thématique: d3, bertin
-
-bertin
+-   Manipulation de données spatiales : turf.js
+-   Cartographie thématique: d3, bertin
