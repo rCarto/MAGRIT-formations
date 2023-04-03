@@ -1,0 +1,46 @@
+---
+title: "<br><br>Map failed"
+author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+date: last-modified
+date-format: "[Dernière modification :] MMMM, YYYY"
+format:
+  revealjs:
+    logo: "../img-template/riate.svg"
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, ../theme.scss]
+title-slide-attributes:
+    data-background-image: "../img-template/magrit_banner.png"
+    data-background-size: contain
+    data-background-position: top
+    data-background-opacity: "number"
+    data-background-color: "#0b0b0d"
+editor: visual
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+##  {.hide background-color="white" background-image="img/map_failed_1.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_2.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_3.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_4.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_5.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_6.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_7.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_8.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_9.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_10.png" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_failed_11.png" background-size="contain"}
