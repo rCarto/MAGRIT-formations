@@ -1,0 +1,249 @@
+---
+title: "<br><br>Sémiologie graphique et variables visuelles"
+author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+date: last-modified
+date-format: "[Dernière modification :] MMMM, YYYY"
+format:
+  revealjs:
+    logo: "../img-template/riate.svg"
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, ../theme.scss]
+title-slide-attributes:
+    data-background-image: "../img-template/magrit_banner.png"
+    data-background-size: contain
+    data-background-position: top
+    data-background-opacity: "number"
+    data-background-color: "#0b0b0d"
+editor: visual
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Implantation, variables visuelles et données statistiques{.inverse background-color="black"}
+
+## Aux origines de la sémiologie graphique
+
+<br>
+
+<center>**Le langage cartographique** a été théorisé par **Jacques Bertin** (1967).</center>
+
+::: columns
+::: {.column width="33%"}
+![](img/bertin_1.jpg)
+:::
+
+::: {.column width="33%"}
+<br> *"Si pour obtenir une réponse correcte et complète à une question donnée (...) une construction requiert un temps d'observation plus court qu'une autre construction, on dira qu'elle est plus efficace pour cette question"*
+
+<br> Il développe une **grammaire graphique** en lien avec l'information à représenter (les données).
+:::
+
+::: {.column width="33%"}
+![](img/bertin_2.jpg)
+:::
+:::
+
+## Le support du langage cartographique
+
+<center><img src="img/implantation.png" width="800"/></center>
+
+## Variables visuelles et implantation
+
+::: columns
+::: {.column width="50%"}
+<img src="img/VV_valeur.png" width="550"/> <img src="img/VV_couleur.png" width="550"/> <img src="img/VV_taille_ordre.png" width="550"/>
+:::
+
+::: {.column width="50%"}
+<img src="img/VV_harmonique.png" width="550"/> <img src="img/VV_intensite.png" width="550"/> <img src="img/VV_forme.png" width="550"/>
+:::
+:::
+
+## Variables visuelles et implantation
+
+<center><img src="img/VV_grain.png" width="550"/> <img src="img/VV_orientation.png" width="550"/> <img src="img/VV_texture_diff.png" width="550"/></center>
+
+## Propriétés des variables visuelles
+
+<center><img src="img/vv_prop.png" width="800"/></center>
+
+## Propriétés des variables visuelles
+
+<center><img src="img/VV_categories.png" width="800"/></center>
+
+## Des données aux variables visuelles
+
+<center><img src="img/VV_donnee_carte.png" width="800"/></center>
+
+## Des données aux variables visuelles
+
+<center><img src="img/VV_arbre.png" width="720"/></center>
+
+## Pour s'en convaincre...
+
+::: columns
+::: {.column width="50%"}
+<img src="img/map_failed_1.jpg" width="350"/>
+:::
+
+::: {.column width="50%"}
+:::
+:::
+
+## Pour s'en convaincre...
+
+::: columns
+::: {.column width="50%"}
+<img src="img/map_failed_1.jpg" width="350"/>
+:::
+
+::: {.column width="50%"}
+<img src="img/map_failed_2.jpg" width="350"/>
+:::
+:::
+
+## Typer les données pour les représenter
+
+<center>
+<img src="img/typer.png" width="700"/>
+</center>
+
+# Données qualitatives nominales {.inverse background-color="black"}
+
+## Exprimer la différenciation
+
+::: columns
+::: {.column width="50%"}
+
+<img src="img/VV_couleur.png" width="450"/> 
+<img src="img/VV_forme.png" width="450"/>
+<img src="img/VV_orientation.png" width="450"/>
+<img src="img/VV_texture_diff.png" width="450"/>
+
+:::
+
+::: {.column width="50%"}
+
+:::
+
+:::
+
+## Exprimer la différenciation
+
+::: columns
+::: {.column width="50%"}
+
+<img src="img/VV_couleur.png" width="450"/> 
+<img src="img/VV_forme.png" width="450"/>
+<img src="img/VV_orientation.png" width="450"/>
+<img src="img/VV_texture_diff.png" width="450"/>
+
+:::
+
+::: {.column width="50%"}
+<img src="img/efficacite_differenciation.png" width="550"/>
+:::
+
+:::
+
+
+
+
+##  {.hide background-color="white" background-image="img/map_couleur.jpg" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_forme.png" background-size="contain"}
+
+
+# Données quantités absolues (stocks) {.inverse background-color="black"}
+
+## Exprimer des quantités
+
+::: columns
+::: {.column width="50%"}
+<img src="img/VV_taille_ordre.png" width="550"/>
+:::
+
+::: {.column width="50%"}
+<img src="img/quantite_surface.png" width="550"/>
+:::
+
+:::
+
+##  {.hide background-color="white" background-image="img/map_taille_1.png" background-size="contain"}
+
+::: footer
+Source : Libération, 2015
+:::
+
+##  {.hide background-color="white" background-image="img/map_taille_2.png" background-size="contain"}
+
+::: footer
+Source : [Philippe Rekacewicz, 2014](https://visionscarto.net/l-arc-des-refugies), mis à jour en 2017
+:::
+
+
+##  {.hide background-color="white" background-image="img/map_taille_3.png" background-size="contain"}
+
+::: footer
+**Les émigrants du Globe** (Minard, 1862)
+:::
+
+##  {.hide background-color="white" background-image="img/map_taille_4.png" background-size="contain"}
+
+::: footer
+Fait avec Magrit ! Ce type de représentations nécessitent un travail important.  De sélection tout d'abord (quel flux représenter ?) et d'édition ensuite (éviter le chevauchement des flux).
+:::
+
+##  {.hide background-color="white" background-image="img/map_taille_5.png" background-size="contain"}
+
+::: footer
+Source : Le [Grand Continent](https://legrandcontinent.eu/fr/2022/04/13/50-cartes-pour-lire-le-premier-tour-de-la-presidentielle-de-2022/), 2022 
+:::
+
+##  {.hide background-color="white" background-image="img/map_taille_6.png" background-size="contain"}
+
+::: footer
+Cartogrammes non contigus, Judy Olson, novembre 1976
+:::
+
+
+# Données quantitatives relatives (ratios) {.inverse background-color="black"}
+
+## Exprimer l'ordre
+
+::: columns
+::: {.column width="50%"}
+<img src="img/VV_valeur.png" width="550"/>
+<img src="img/VV_harmonique.png" width="550"/> 
+<img src="img/VV_intensite.png" width="550"/> 
+:::
+
+::: {.column width="50%"}
+<img src="img/VV_taille_ordre.png" width="550"/>
+<img src="img/VV_grain.png" width="550"/> 
+:::
+
+:::
+
+
+
+##  {.hide background-color="white" background-image="img/map_valeur_1.jpg" background-size="contain"}
+
+::: footer
+Carte figurative de l'instruction populaire de la France (1826), par Charles Dupin
+:::
+
+##  {.hide background-color="white" background-image="img/map_valeur_2.png" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_valeur_3.png" background-size="contain"}
+
+
+# Combiner les représentations{.inverse background-color="black"}
+
+##  {.hide background-color="white" background-image="img/map_combinaison_1.png" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/map_combinaison_2.png" background-size="contain"}
