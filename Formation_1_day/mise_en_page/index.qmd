@@ -1,0 +1,145 @@
+---
+title: "<br><br>Habillage et mise en page"
+author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+date: last-modified
+date-format: "[Dernière modification :] MMMM, YYYY"
+format:
+  revealjs:
+    logo: "../img-template/riate.svg"
+    embed-resources: true
+    incremental: false
+    smaller: true
+    theme: [simple, ../theme.scss]
+title-slide-attributes:
+    data-background-image: "../img-template/magrit_banner.png"
+    data-background-size: contain
+    data-background-position: top
+    data-background-opacity: "number"
+    data-background-color: "#0b0b0d"
+editor: visual
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+# Habillage {.part}
+
+##  {.hide background-color="white" background-image="img/habillage.png" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/jungle.png" background-size="contain"}
+
+## Le titre
+
+Le titre est l’identifiant premier du sujet de la carte il est le plus souvent disposé en haut. Il est écrit en caractères suffisamment grands et épais, mais pas disproportionnés par rapport à la carte.
+
+![](img/III.09.nddl.png)
+
+## La légende
+
+La légende explique l’ensemble des modes de représentation utilisés sur la carte. 
+C'est est un élément essentiel et obligatoire de l’habillage de la carte.
+C’est à la fois le dictionnaire et l’index des symboles graphiques, une aide pour la lecture et l’analyse du message présenté.
+
+![](img/leg1.png)
+
+## La légende
+
+La légende explique l’ensemble des modes de représentation utilisés sur la carte. 
+C'est est un élément essentiel et obligatoire de l’habillage de la carte.
+C’est à la fois le dictionnaire et l’index des symboles graphiques, une aide pour la lecture et l’analyse du message présenté.
+
+![](img/leg2.png)
+
+## La légende
+
+La légende explique l’ensemble des modes de représentation utilisés sur la carte. 
+C'est est un élément essentiel et obligatoire de l’habillage de la carte.
+C’est à la fois le dictionnaire et l’index des symboles graphiques, une aide pour la lecture et l’analyse du message présenté.
+
+![](img/leg3.png)
+
+## La légende
+
+La légende explique l’ensemble des modes de représentation utilisés sur la carte. 
+C'est est un élément essentiel et obligatoire de l’habillage de la carte.
+C’est à la fois le dictionnaire et l’index des symboles graphiques, une aide pour la lecture et l’analyse du message présenté.
+
+![](img/legpos.png)
+
+## La date
+
+Il y a plusieurs dates. La date de réalisation de la carte. La date de la source de données. La date correspondant à la donnée elle même.
+
+![](img/date.png)
+
+
+## La source
+
+Elle est indispensable pour les cartes statistiques elle précise l’origine et la date de l’information (date de la collecte et/ou de publication). Elle permet au lecteur d’apprécier la fiabilité du document et de recourir aux données de base si nécessaire. Elle est mentionnée discrètement.
+
+## L'échelle
+
+Elle est indispensable et se place près du cadre de la carte ou à la fin de la légende. Elle doit rester discrète. On dessine une échelle graphique plutôt qu'une échelle numérique. 
+
+![](img/echelle.png)
+
+## L'orientation
+
+L’orientation (flèche nord) est surtout utile quand on met représente une vision inhabituelle d'un territoire.
+
+![](img/orientation.png)
+
+## L'orientation
+
+A éviter sur les cartes du Monde.
+
+![](img/worldorientation.png)
+
+## Toponymes
+
+Faire apparaître les lieux importants est utile pour la lectire de la carte. Attention de ne pas utiliser trop de polices différentes. 
+
+![](img/toponym.png)
+
+
+
+## Autres éléments
+
+![](img/habillageautre.png)
+
+# Mise en page {.part}
+
+
+## Le format le support.
+
+Les cartes ont des dimensions, qui dependent du support de publication. On adaptera la mise en page en conséquence.
+
+Si la carte est à cheval sur 2 pages, il faudra prendre en compte le pli. 
+
+![](img/format.png)
+
+## Occuper intelligemment l'espace
+
+![](img/espace.png)
+
+## Bien hiérachiser les informations
+
+La hiérarchisation, c'est la règle d'or de la mise en page en cartographie. 
+
+![](img/hierarchie1.png)
+
+## Bien hiérachiser les informations
+
+![](img/hierarchie2.png)
+
+## Défonces, halo, transparence, contrastes, détourages, hombrages...
+
+![](img/halo.png)
+
+## 3 cartes simples > 1 carte compliquée
+
+![](img/multi.png)
+
+## *Une bonne carte énonce une multitude de petits mensonges. Elle déforme la vérité pour aider l'utilisateur à voir ce qu'il a besoin de voir*
+
+### (M. Monmonier, 1991)
