@@ -1,0 +1,139 @@
+---
+title: "<br><br>Les discrétisations"
+author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+date: last-modified
+lang: fr-FR
+date-format: "[Dernière modification :] MMMM, YYYY"
+format:
+  revealjs:
+    logo: "../img-template/riate.svg"
+    embed-resources: true
+    smaller: true
+    scrollable: true
+    theme: [simple, ../theme.scss]
+title-slide-attributes:
+    data-background-image: "../img-template/magrit_banner.png"
+    data-background-size: contain
+    data-background-position: top
+    data-background-opacity: "number"
+    data-background-color: "#0b0b0d"
+editor: visual
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# La carte choroplèthe {.inverse background-color="black"}
+
+## Définition
+
+> Une carte choroplèthe (du grec χῶρος  : « zone/région » et πλῆθος  : « grand nombre, multitude ») est une carte thématique où les régions sont colorées ou remplies d'un motif qui montre une mesure statistique, tels la densité de population ou le revenu par habitant. Ce type de carte facilite la comparaison d'une mesure statistique d'une région à l'autre ou montre la variabilité de celle-ci pour une région donnée. 
+
+
+::: aside
+Carte choroplèthe [Wikipedia](https://fr.wikipedia.org/wiki/Carte_choropl%C3%A8the)
+:::
+
+
+
+## Avant de cartographier
+
+- L'information statistique contenue dans une table attributaire ne peut pas toujours être cartographiée directement.  
+Pour être intelligible, l'information doit souvent être convertie, modifiée, réduite au préalable.
+
+- Les données quantitatives relatives (taux, indices etc.) doivent *toujours* être synthétisées et subdivisées en classes de valeurs.   
+Cette procédure est souvent nommée **discretisation**.
+
+# Les discrétisations {.inverse background-color="black"}
+
+## Quelques principes 
+
+1. Les classes doivent être homogènes et distinctes les unes des autres.
+
+2. Le nombre de classes doit être inférieur au nombre d'observations.
+
+3. **Les caractéristiques essentielles de la distribution doivent être préservées** (étendue, dispersion, forme de la distribution).
+
+4. Il est préférable d'utiliser des limites de classes arrondies ou pertinentes. Les bornes de classes doivent être facile à lire et à mémoriser.
+
+
+## Comment procéder
+
+### 1. Résumer la série statistique
+- Paramètres de position ou valeurs centrales  (moyenne, médiane, mode)  
+Ces paramètres indiquent la valeur "typique" autour de laquelle les observations sont réparties.
+- Paramètres de dispersion (écart-type, intervalle inter quartiles...)  
+Ces paramètres mesurent de l'écart des valeurs d'une distribution à une valeur centrale.
+    
+### 2. Analyser la forme de la distribution
+- Histogrammes, boîtes à moustaches, essaim d'abeilles (*beeswarm*)
+- ...
+    
+### 3. Déterminer les intervales des classes 
+- Il exise de nombreuses méthodes.
+
+
+# Les méthodes de discrétisations {.inverse background-color="black"}
+
+## Quelle dicrétisation choisir 
+
+![](img/Figure-2.08.png)
+
+## Les méthodes
+
+::: panel-tabset
+
+### Les seuils naturels
+
+![](img/Figure-2.09.png)
+
+### Les amplitudes égales
+![](img/Figure-2.10.png)
+
+### Les effectifs égaux
+
+![](img/Figure-2.11.png)
+
+
+### Moyenne / écart-type
+![](img/Figure-2.12.png)
+
+### La progression géométrique
+![](img/Figure-2.13.png)
+
+:::
+
+## Les méthodes
+::: columns
+::: {.column width="48%"}
+::: medium
+![](img/Figure-2.14.png)
+:::
+:::
+:::
+
+
+## Géovisualisation des discrétisations : une petite application pédagogique
+
+::: columns
+::: {.column width="68%"}
+::: medium
+[![](img/jeg.png)](https://mappemonde.gitpages.huma-num.fr/archives/119/)
+:::
+:::
+:::
+
+
+:::aside
+Laurent Jégou, « Géovisualisation des discrétisations : une petite application pédagogique », *Mappemonde*, 119 | 2017, [https://doi.org/10.4000/mappemonde.2569](https://doi.org/10.4000/mappemonde.2569)
+:::
+
+
+## Les méthodes de discrétisation et leur utilisation dans Magrit 
+
+{{< video https://www.youtube.com/embed/7J5CCpGSGvA width="560" height="315"  >}}
+
+::: aside
+Nicolas Lambert, 2020. COURS - Les méthodes de discrétisation et leur utilisation dans Magrit. [https://www.youtube.com/watch?v=7J5CCpGSGvA](https://www.youtube.com/watch?v=7J5CCpGSGvA)
+:::
