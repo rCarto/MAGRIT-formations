@@ -1,0 +1,246 @@
+---
+title: "<br><br>Le fond de carte"
+author: "<br><br><br>Nicolas Lambert, Timothée Giraud, Matthieu Viry, Ronan Ysebaert"
+date: last-modified
+date-format: "[Dernière modification :] MMMM, YYYY"
+format:
+  revealjs:
+    logo: "../img-template/riate.svg"
+    embed-resources: true
+    incremental: false
+    smaller: true
+    theme: [simple, ../theme.scss]
+title-slide-attributes:
+    data-background-image: "../img-template/magrit_banner.png"
+    data-background-size: contain
+    data-background-position: top
+    data-background-opacity: "number"
+    data-background-color: "#0b0b0d"
+editor: visual
+execute:
+  echo: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Les projections {.part}
+
+##  {.hide background-color="black" background-image="img/IV.06.platiste.png" background-size="contain"}
+
+::: footer
+Depuis l'Antiquité, sait que la Terre n'est pas plate
+:::
+
+##  {.hide background-color="black" background-image="img/1-bluemarble_west.jpg" background-size="contain"}
+
+::: footer
+La Bille bleue (en anglais : « The Blue Marble ») est une photographie célèbre de la Terre prise le 7 décembre 1972 par l'équipage d'Apollo 17 lors de son voyage vers la Lune, à une distance d'environ 45 000 km.
+:::
+
+##  {.hide background-color="#5D5D5D" background-image="img/orange2.png" background-size="contain"}
+
+::: footer
+"La Terre est bleue comme une Orange" (Paul Eluard)
+:::
+
+##  {.hide background-color="black" background-image="img/newton.png" background-size="contain"}
+
+::: footer
+Quelle est la forme de la Terre ? Orange ou citron ?
+:::
+
+##  {.hide background-color="black" background-image="img/I.02.geoide.png" background-size="contain"}
+
+::: footer
+En fait, on habite sur une patate.
+:::
+
+##  {.hide background-color="white" background-image="img/geoide.png" background-size="contain"}
+
+::: footer
+Le géoîde correspond à la surface d'altitude zéro
+:::
+
+##  {.hide background-color="white"}
+
+![](img/ellipse.png)
+
+::: footer
+L'ellipsoide est une approximation mathématique de la forme de la Terre.
+:::
+
+##  {.hide background-color="white"}
+
+![](img/latlon.png)
+
+::: footer
+C'est à partir de l'ellipsoide qu'on détermine les latitudes et longitudes
+:::
+
+##  {.hide background-color="white"}
+
+![](img/proj1.png)
+
+::: footer
+Mettre à plat
+:::
+
+##  {.hide background-color="white" background-image="img/aspects_all.jpg" background-size="contain"}
+
+::: footer
+Mettre à plat
+:::
+
+##  {.hide background-color="white" background-image="img/lambert93.png" background-size="contain"}
+
+::: footer
+Un choix technique pour minimiser les déformations (ici, projection conique)
+:::
+
+##  {.hide background-color="white" background-image="img/eeagrid.png" background-size="contain"}
+
+::: footer
+Des données sont parfois fouirnies dans des systèmes de projections précis. E.g. ETRS89-LAEA grid. (ici, projection azimutale)
+:::
+
+##  {.hide background-color="white"}
+
+![](img/proj2.png)
+
+::: footer
+En cartographie thématique, on va souvent classer les projections en fonction des projections qu'elles induisent.
+:::
+
+##  {.hide background-color="white" background-image="img/merc.jpg" background-size="contain"}
+
+::: footer
+La projection de Mercator (projection conforme)
+:::
+
+##  {.hide background-color="white" background-image="img/merc1.png" background-size="contain"}
+
+::: footer
+La projection de Mercator
+:::
+
+##  {.hide background-color="white" background-image="img/merc2.png" background-size="contain"}
+
+::: footer
+La projection de Mercator
+:::
+
+##  {.hide background-color="white" background-image="img/merc3.png" background-size="contain"}
+
+::: footer
+La projection de Mercator
+:::
+
+##  {.hide background-color="white" background-image="img/taillepays.png" background-size="contain"}
+
+::: footer
+La projection de Mercator
+:::
+
+##  {.hide background-color="white" background-image="img/Mercator1784.jpg" background-size="contain"}
+
+::: footer
+La projection de Mercator
+:::
+
+##  {.hide background-color="white" background-image="img/I.07.peters.png" background-size="contain"}
+
+::: footer
+La projection de Gall-Peters (projection équivalente)
+:::
+
+##  {.hide background-color="white" background-image="img/reclusc.png" background-size="contain"}
+
+##  {.hide background-color="white" background-image="img/reclusc2.png" background-size="contain"}
+
+# La généralisation {.part}
+
+## La carte à l'échelle 1/1
+
+**J.L. Borges, L. Carrol, U. Eco et cie.**
+
+<br/><br/>
+
+\*"En cet empire, l´Art de la Cartographie fut poussé à une telle Perfection que la Carte d´une seule Province occupait toute une ville et la Carte de l´Empire toute une Province. Avec le temps, ces Cartes Démesurées cessèrent de donner satisfaction et les Collèges de Cartographes levèrent\* <ins>**une Carte de l´Empire, qui avait le Format de l´Empire et qui coïncidait avec lui, point par point**</ins>. Moins passionnées pour l´Etude de la Cartographie, les Générations Suivantes réfléchirent que cette Carte Dilatée était inutile et, non sans impiété, elle l´abandonnèrent à l´Inclémence du Soleil et des Hivers. Dans les Déserts de l´Ouest, subsistent des Ruines très abimées de la Carte. Des Animaux et des Mendiants les habitent. Dans tout le Pays, il n´y a plus d´autre trace des Disciplines Géographiques." (Suarez Miranda, Viajes de Varones Prudentes, Livre IV, Chapitre XIV, Lérida, 1658.)
+
+<br/>
+
+J.L. Borges, L´auteur et autres textes, Paris, Gallimard, 3e édition, 1982, p.199. Le texte est publié à l´origine à Buenos-Aires en 1946.
+
+## La généralisation
+
+<br/>
+
+3 objectifs :
+
+<br/><br/>
+
+### Pragmatique
+
+Améliorer la lisibilité de la carte, éliminer toute surcharge graphique
+
+### Technique
+
+Alléger le fond de carte en diminuant le nombre de coordonnées stockées en mémoire,
+
+### Esthétique
+
+Dessiner selon un stylé donné.
+
+## La sélection
+
+La selection consiste au choix des éléments des éléments à représenter. Ici, on élimine les îles (critère de surface).
+
+![](img/selection.png)
+
+## Schématisation structurale
+
+La schématisation structurale consiste en une simplification des tracés.
+
+![](img/shematisation1.png)
+
+## Schématisation structurale
+
+La schématisation structurale consiste en une simplification des tracés.
+
+![](img/shematisation2.png)
+
+## Schématisation conceptuelle
+
+La schématisation conceptuelle est une simplification qui intègre des éléments d'interprétation (agrégations d'objets, changement de figuration, etc). On la retrouve beaucoup dans les cartes topographiques.
+
+![](img/conceptuelle.png)
+
+## Harmonisation
+
+L'harmonisation est une opération d'homogénéisation générale du fond carte entre tous les éléments qui le composent.
+
+![](img/harmonisation.png)
+
+## La généralisation dépend de l'échelle
+
+La façon dont on va simplifier une fond de carte dépend de l'échelle de la carte (ou sa taille)
+
+![](img/simplechelle.png)
+
+## La généralisation dépend de l'échelle
+
+La façon dont on va simplifier une fond de carte dépend de l'échelle de la carte (ou sa taille)
+
+![](img/simpltopo.png)
+
+## Des choix humains
+
+Derrière la généralisation des fonds de cartes, il y des choix humain. Qu'est ce qui est important, qu'est ce qui ne l'est pas au regard de la thématique traitée. Par exemple, une carte du monde sur la démographie se désintéressera des îles Caïman. Mais une carte du monde sur l'évasion fiscale sur-représentera ce territoire.
+
+![](img/choixhumains.png)
+
+## Styles
+
+La généralisation cartographique, c'est aussi le moment où on va choisir un style graphique. Plutôt angulaire ? Plutôt sinueux ? Tout est possible.
+
+![](img/style.png)
