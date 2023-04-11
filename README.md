@@ -12,15 +12,15 @@ Débutant (pas de connaissance particulière en cartographie thématique).
 
 **Matin**
 
-- Présentation du RIATE
+- Présentation du [RIATE](https://riate.cnrs.fr)
 - Histoire de la cartographie thématique
 - Sources de l'information géographique
+- Fond de carte
 - Sémiologie graphique et variables visuelles
 - Discrétisation
-- Mise en page / habillage d'une carte
-- Mise en carte d'un esprit critique. 1
+- Mise en page 
+- Mise en scène
 - Map failed
-- Quels outils pour quels usage ? 
 
 **Après-midi**
 
